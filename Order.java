@@ -11,9 +11,7 @@ public class Order {
         this.order = order;
         this.customer = customer;
         this.tableID = tableID;
-
     }
-
 
     public String getOrder() {
         return order;
@@ -23,17 +21,9 @@ public class Order {
         return customer;
     }
 
-
-
-    //Implement the createOrder method: This method should generate the final order based
-    // on the orders placed by the customers at the table.
-
-    //Ensuring that the order is correctly formatted.
     String toString(Order order){
         return customer + ": " + order;
     }
-
-
     public int getTableID() {
         return tableID;
     }

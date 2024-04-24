@@ -16,8 +16,6 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    //Implement the customerSays method: This method should allow customers to place their orders at
-    // the specified table.
     public void customerSays(int tableId, String customerOrder){ //customerOrder : " Joe: Pizza"
         List<String> parts = Arrays.stream(customerOrder.split(":"))
                                         .map(String::trim)
@@ -30,12 +28,12 @@ public class Restaurant {
             }
         }
     }
-    Table initTable(int tableCapacity){
+    int initTable(int tableCapacity){
         Table table = new Table(tableCapacity);
-        table.setTableID(lastTableID++);
-        tables.add(table);
         lastTableID++;
-        return table;
+        table.setTableID(lastTableID);
+        tables.add(table);
+        return lastTableID;
     }
 
     String createOrder(int tableID){
@@ -52,9 +50,4 @@ public class Restaurant {
         }
         return fullOrder;
     }
-    //You'll need to consider various scenarios and edge cases, such as:
-    //Handling orders from multiple customers at the same table.
-
-    //Handling cases where not all customers have placed an order.
-    //Handling cases where a dish is meant for a specific number of people.
 }
