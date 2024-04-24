@@ -1,3 +1,5 @@
+package main.src;
+
 public class Order {
     private final String order;
     private String customer;
